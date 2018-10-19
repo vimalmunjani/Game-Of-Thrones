@@ -1,0 +1,14 @@
+
+.card{
+    border: 1px solid blue;
+}
+.card:hover{
+    /* transform: scale(1.02); */
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px 0 rgba(218, 14, 14, 0.2);
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes hoverEffect {
+    
+}

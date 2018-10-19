@@ -1,0 +1,84 @@
+<div style="height: 200px; background-color: black; margin: 10px 0 " ></div>
+
+<!-- <h2>Basic</h2>
+<div class="row justify-content-start no-gutters">
+  <ng-container *ngFor = "let single of many">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="card" style="margin: 2%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+            <div class="card-body">
+              <h5 class="card-title">Card title {{single}}</h5>
+              <p class="card-text">Some quick example text to build on </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+  </ng-container>
+</div> -->
+<h2>Books</h2>
+<div class="row justify-content-start no-gutters">
+    <ng-container *ngFor = "let book of books">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="card" style="margin: 2%; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+              <div style=" height: 10px;background-color: skyblue; "></div>
+              <div class="card-body">
+                
+                <h5 class="card-title">{{ book.name }}</h5>
+                <p class="card-text"> {{ book.url }} </p>
+                <a href="#" class="btn btn-primary">Details</a>
+              </div>
+            </div>
+      </div>
+    </ng-container>
+  </div>
+<h2>Houses</h2>
+  <div class="row justify-content-start no-gutters">
+      <ng-container *ngFor = "let book of houses">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="card" style="margin: 2%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+                <div style=" height: 10px;background-color: skyblue; "></div>
+                <div class="card-body">
+                  
+                  <h5 class="card-title">{{ book.name }}</h5>
+                  <p class="card-text"> {{ book.url }} </p>
+                  <a href="#" class="btn btn-primary">Details</a>
+                </div>
+              </div>
+        </div>
+      </ng-container>
+    </div>
+<h2>Characters</h2>
+<div class="row justify-content-start no-gutters">
+    <ng-container *ngFor = "let book of characters">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="card" style="margin: 2%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+              <div style=" height: 10px;background-color: skyblue; "></div>
+              <div class="card-body">
+                
+                <h5 class="card-title">{{ book.name }}</h5>
+                <p class="card-text"> {{ book.url }} </p>
+                <a href="#" class="btn btn-primary">Details</a>
+              </div>
+            </div>
+      </div>
+    </ng-container>
+  </div>
+  
+  <h2>All</h2>
+<div class="row justify-content-start no-gutters">
+    <ng-container *ngFor = "let book of all">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="card" style="margin: 2%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+
+              <div *ngIf = " (book.url).includes('characters') " 
+              style=" height: 10px;background-color: skyblue; ">
+              </div>
+              <div class="card-body">
+                
+                <h5 class="card-title">{{ book.name }}</h5>
+                <p class="card-text"> {{ book.url }} </p>
+                <a href="#" class="btn btn-primary">Details</a>
+              </div>
+            </div>
+      </div>
+    </ng-container>
+  </div>
