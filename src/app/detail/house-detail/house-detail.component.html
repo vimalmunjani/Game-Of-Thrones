@@ -1,0 +1,165 @@
+<ng-container *ngIf="(detailData)">
+
+  <table class="table">
+
+    <tbody>
+
+      <tr>
+        <th scope="row">Name</th>
+        <td *ngIf="(detailData.name) ;else unspecified">{{detailData.name}}</td>
+        <ng-template #unspecified>
+          <td>Not Specified</td>
+        </ng-template>
+      </tr>
+
+      <tr>
+        <th scope="row">Region</th>
+        <td>{{detailData.region}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">Coat Of Arms</th>
+        <td>{{detailData.coatOfArms}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">Words</th>
+        <td>{{detailData.words}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">Titles</th>
+        <td>
+          <table class="table">
+            <tbody>
+              <ng-container *ngFor="let title of (detailData.titles)">
+                <tr>
+                  <td>
+                    {{title}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+
+
+
+      <tr>
+        <th scope="row">Seats</th>
+        <td>
+          <table class="table">
+            <tbody>
+              <ng-container *ngFor="let seat of (detailData.seats)">
+                <tr>
+                  <td>
+                    {{seat}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row">Current Lord</th>
+        <td style="cursor: pointer; " (click)="goToDetails(detailData.currentLord)">
+          {{detailData.currentLord}}
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row">Heir</th>
+        <td style="cursor: pointer; " (click)="goToDetails(detailData.heir)">
+          {{detailData.heir}}
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row">Over Lord</th>
+        <td style="cursor: pointer; " (click)="goToDetails(detailData.overlord)">
+          {{detailData.overlord}}
+        </td>
+      </tr>
+
+
+
+
+      <tr>
+        <th scope="row">Founded</th>
+        <td>{{detailData.founded}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">Founder</th>
+        <td style="cursor: pointer; " (click)="goToDetails(detailData.founder)">
+          {{detailData.founder}}
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row">Died Out</th>
+        <td>{{detailData.diedOut}}</td>
+      </tr>
+
+
+      <tr>
+        <th scope="row">Ancestral Weapons</th>
+        <td>
+          <table class="table">
+            <tbody>
+              <ng-container *ngFor="let weapon of (detailData.ancestralWeapons)">
+                <tr>
+                  <td>
+                    {{weapon}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+
+      <tr>
+        <th scope="row">Cadet Branches</th>
+        <td>
+          <table class="table">
+            <tbody>
+              <ng-container *ngFor="let cadet of (detailData.cadetBranches)">
+                <tr>
+                  <td>
+                    {{cadet}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+
+      <tr>
+        <th scope="row">Sworn Members</th>
+        <td>
+          <table class="table table-hover">
+            <tbody>
+              <ng-container *ngFor="let url of (detailData.swornMembers)">
+                <tr>
+                  <td style="cursor: pointer; " (click)="goToDetails(url)">
+                    {{url}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</ng-container>

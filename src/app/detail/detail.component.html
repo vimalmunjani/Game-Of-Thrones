@@ -1,3 +1,30 @@
-<p>
-  detail works!
-</p>
+<div class="container">
+  
+    <div (click) = "goToHome()" class="go-to-home">
+        <i class="fas fa-home">&nbsp;&nbsp;</i>A Song Of Ice And Fire
+    </div>
+    <div class="banner" [ngClass] = "{
+      'book-card': (url).includes('books'),
+      'house-card': (url).includes('houses'),
+      'character-card': (url).includes('characters')
+    }" >
+    
+
+    <div class="type-banner">
+        <i *ngIf = " (url).includes('books') " class="fas fa-journal-whills icon"></i>
+        <i *ngIf = " (url).includes('houses') "  class="fab fa-fort-awesome icon"></i>
+        <i *ngIf = " (url).includes('characters') "  class="fas fa-crown icon"></i>
+    </div>
+    </div>
+
+    <div class="loader" *ngIf="isLoading">
+
+    </div>
+
+   <ng-container [ngSwitch] = "detailType">
+           <book-detail [detailData] = "detailData" *ngSwitchCase = "'book'" ></book-detail>
+           <house-detail [detailData] = "detailData" *ngSwitchCase = "'house'" ></house-detail>
+           <character-detail [detailData] = "detailData" *ngSwitchCase = "'character'" ></character-detail>
+   </ng-container>
+     
+</div>

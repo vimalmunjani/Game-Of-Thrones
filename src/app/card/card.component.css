@@ -1,0 +1,46 @@
+.card {
+  margin: 4%;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-banner {
+  /* background-color: skyblue; */
+  font-size: 15px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon{
+  font-size: 70px;
+  color: black;
+}
+
+.book-card {
+  background-color: #00796B
+}
+
+.house-card {
+  background-color :#F57C00
+}
+
+.character-card {
+  background-color: #03A9F4
+}
+
+
+.card-footer {
+  cursor: pointer;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  color: white;
+  font-weight: bold;
+}

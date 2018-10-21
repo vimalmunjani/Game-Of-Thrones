@@ -8,26 +8,23 @@ export class IceAndFireService {
 
   constructor(private http: HttpClient) {}
 
-    getMyData() {
-        this.http.get('https://www.anapioficeandfire.com/api/books/1').subscribe(data => {
-        console.log('Direct from service class --- data', data);
-        });
+    getBooks(page = 1, pageSize = 10) {
+      const url = `https://www.anapioficeandfire.com/api/books?page=${page}&pageSize=${pageSize}`;
+      return this.http.get(url);
     }
 
-    getMyData2() {
-      return this.http.get('https://www.anapioficeandfire.com/api/books/1');
+    getHouses(page = 1, pageSize = 10) {
+      const url = `https://www.anapioficeandfire.com/api/houses?page=${page}&pageSize=${pageSize}`;
+      return this.http.get(url);
     }
 
-    getBooks() {
-      return this.http.get('https://www.anapioficeandfire.com/api/books');
+    getCharacters(page = 1, pageSize = 10) {
+      const url = `https://www.anapioficeandfire.com/api/characters?page=${page}&pageSize=${pageSize}`;
+      return this.http.get(url);
     }
 
-    getHouses() {
-      return this.http.get('https://www.anapioficeandfire.com/api/houses');
-    }
-
-    getCharacters() {
-      return this.http.get('https://www.anapioficeandfire.com/api/characters');
+    getDataByUrl(url) {
+      return this.http.get(url);
     }
 
 

@@ -1,0 +1,88 @@
+<ng-container *ngIf="(detailData)">
+
+  <table class="table">
+
+    <tbody>
+
+      <tr>
+        <th scope="row">Name</th>
+        <td>{{detailData.name}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Author</th>
+        <td>
+          <table class="table">
+            <tbody>
+              <ng-container *ngFor="let author of (detailData.authors)">
+                <tr>
+                  <td>
+                    {{author}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">URL</th>
+        <td>{{detailData.url}}</td>
+      </tr>
+      <tr>
+        <th scope="row">ISBN</th>
+        <td>{{detailData.isbn}}</td>
+      </tr>
+      <tr>
+        <th scope="row">No. of Pages</th>
+        <td>{{detailData.numberOfPages}}</td>
+      </tr>
+      <tr>
+        <th scope="row">publisher</th>
+        <td>{{detailData.publisher}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Country</th>
+        <td>{{detailData.country}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Released</th>
+        <td>{{detailData.released}}</td>
+      </tr>
+      <tr>
+        <th scope="row">POV Characters</th>
+        <td>
+          <table class="table table-hover">
+            <tbody>
+              <ng-container *ngFor="let url of (detailData.povCharacters)">
+                <tr>
+                  <td style="cursor: pointer; " (click)="goToDetails(url)">
+                    {{url}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row">Characters</th>
+        <td>
+          <table class="table table-hover">
+            <tbody>
+              <ng-container *ngFor="let url of (detailData.characters)">
+                <tr>
+                  <td style="cursor: pointer; " (click)="goToDetails(url)">
+                    {{url}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</ng-container>

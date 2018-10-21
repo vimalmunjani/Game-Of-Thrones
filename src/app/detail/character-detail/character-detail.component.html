@@ -1,0 +1,185 @@
+<ng-container *ngIf="(detailData)">
+
+  <table class="table">
+
+    <tbody>
+
+      <tr>
+        <th scope="row">Name</th>
+        <td *ngIf="(detailData.name) ;else unspecified">{{detailData.name}}</td>
+        <ng-template #unspecified>
+          <td>Not Specified</td>
+        </ng-template>
+      </tr>
+
+
+      <tr>
+        <th scope="row">Aliases</th>
+        <td>
+          <table class="table">
+            <tbody>
+              <ng-container *ngFor="let alias of (detailData.aliases)">
+                <tr>
+                  <td>
+                    {{alias}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row">Titles</th>
+        <td>
+          <table class="table">
+            <tbody>
+              <ng-container *ngFor="let title of (detailData.titles)">
+                <tr>
+                  <td>
+                    {{title}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Gender</th>
+        <td>{{detailData.gender}}</td>
+      </tr>
+    
+
+      <tr>
+        <th scope="row">Culture</th>
+        <td>{{detailData.culture}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Born</th>
+        <td>{{detailData.born}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Died</th>
+        <td>{{detailData.died}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Father</th>
+        <td style="cursor: pointer; " (click)="goToDetails(detailData.father)">
+          {{detailData.father}}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Mother</th>
+        <td style="cursor: pointer; " (click)="goToDetails(detailData.mother)">
+          {{detailData.mother}}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Spouse</th>
+        <td style="cursor: pointer; " (click)="goToDetails(detailData.spouse)">
+          {{detailData.spouse}}
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row">URL</th>
+        <td>{{detailData.url}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">Allegiances</th>
+        <td>
+          <table class="table">
+            <tbody>
+              <ng-container *ngFor="let allegiance of (detailData.allegiances)">
+                <tr>
+                  <td style="cursor: pointer; " (click)="goToDetails(allegiance)">
+                    {{allegiance}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+
+      <tr>
+        <th scope="row">POV Books</th>
+        <td>
+          <table class="table">
+            <tbody>
+              <ng-container *ngFor="let bookUrl of (detailData.povBooks)">
+                <tr>
+                  <td style="cursor: pointer; " (click)="goToDetails(bookUrl)">
+                    {{bookUrl}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+
+      <tr>
+        <th scope="row">Books</th>
+        <td>
+          <table class="table">
+            <tbody>
+              <ng-container *ngFor="let bookUrl of (detailData.books)">
+                <tr>
+                  <td style="cursor: pointer; " (click)="goToDetails(bookUrl)">
+                    {{bookUrl}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+
+      <tr>
+        <th scope="row">Played By</th>
+        <td>
+          <table class="table">
+            <tbody>
+              <ng-container *ngFor="let by of (detailData.playedBy)">
+                <tr>
+                  <td>
+                    {{by}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+
+      <tr>
+        <th scope="row">TV Series</th>
+        <td>
+          <table class="table">
+            <tbody>
+              <ng-container *ngFor="let tvSeriess of (detailData.tvSeries)">
+                <tr>
+                  <td>
+                    {{tvSeriess}}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+
+
+    </tbody>
+  </table>
+
+</ng-container>

@@ -1,84 +1,79 @@
-<div style="height: 200px; background-color: black; margin: 10px 0 " ></div>
+<div class="container">
 
-<!-- <h2>Basic</h2>
-<div class="row justify-content-start no-gutters">
-  <ng-container *ngFor = "let single of many">
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="card" style="margin: 2%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
-            <div class="card-body">
-              <h5 class="card-title">Card title {{single}}</h5>
-              <p class="card-text">Some quick example text to build on </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-    </div>
-  </ng-container>
-</div> -->
-<h2>Books</h2>
-<div class="row justify-content-start no-gutters">
-    <ng-container *ngFor = "let book of books">
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <div class="card" style="margin: 2%; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
-              <div style=" height: 10px;background-color: skyblue; "></div>
-              <div class="card-body">
-                
-                <h5 class="card-title">{{ book.name }}</h5>
-                <p class="card-text"> {{ book.url }} </p>
-                <a href="#" class="btn btn-primary">Details</a>
-              </div>
-            </div>
-      </div>
-    </ng-container>
+  <div class="banner">
+    A Song Of Ice And Fire
   </div>
-<h2>Houses</h2>
+
+
+  <div class="filter-wrapper">
+
+    <div>
+      <select (change)="onOptionsSelected($event.target.value)">
+        <option *ngFor="let filter of filters" value={{filter}}>
+          {{filter}}
+        </option>
+      </select>
+    </div>
+
+    <div class="filterText">Showing Results for - {{ selectedFilter }}</div>
+
+
+    <nav class="pager">
+      <ul class="pagination" [style.font-weight]="'500'">
+
+        <li class="page-item" [class.disabled]="isFirstPage">
+          <a class="page-link" (click)="previous()">
+            Previous
+          </a>
+        </li>
+
+        <li class="page-item"><a class="page-link">{{ previousPage }} </a></li>
+        <li class="page-item active"><a class="page-link"> {{ currentPage }} </a></li>
+        <li class="page-item"><a class="page-link">{{ nextPage }} </a></li>
+
+        <li class="page-item" [class.disabled]="isLastPage">
+          <a class="page-link" (click)="next()">
+            Next
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+
+  </div>
+
+  <div class="loader" *ngIf="isLoading">
+
+  </div>
+
   <div class="row justify-content-start no-gutters">
-      <ng-container *ngFor = "let book of houses">
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="card" style="margin: 2%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
-                <div style=" height: 10px;background-color: skyblue; "></div>
-                <div class="card-body">
-                  
-                  <h5 class="card-title">{{ book.name }}</h5>
-                  <p class="card-text"> {{ book.url }} </p>
-                  <a href="#" class="btn btn-primary">Details</a>
-                </div>
-              </div>
-        </div>
-      </ng-container>
-    </div>
-<h2>Characters</h2>
-<div class="row justify-content-start no-gutters">
-    <ng-container *ngFor = "let book of characters">
+    <ng-container *ngFor="let item of all">
       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <div class="card" style="margin: 2%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
-              <div style=" height: 10px;background-color: skyblue; "></div>
-              <div class="card-body">
-                
-                <h5 class="card-title">{{ book.name }}</h5>
-                <p class="card-text"> {{ book.url }} </p>
-                <a href="#" class="btn btn-primary">Details</a>
-              </div>
-            </div>
+        <card [item]="item"></card>
       </div>
     </ng-container>
   </div>
-  
-  <h2>All</h2>
-<div class="row justify-content-start no-gutters">
-    <ng-container *ngFor = "let book of all">
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <div class="card" style="margin: 2%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
 
-              <div *ngIf = " (book.url).includes('characters') " 
-              style=" height: 10px;background-color: skyblue; ">
-              </div>
-              <div class="card-body">
-                
-                <h5 class="card-title">{{ book.name }}</h5>
-                <p class="card-text"> {{ book.url }} </p>
-                <a href="#" class="btn btn-primary">Details</a>
-              </div>
-            </div>
-      </div>
-    </ng-container>
-  </div>
+</div>
+
+<nav class="pager">
+  <ul class="pagination" [style.font-weight]="'500'">
+
+    <li class="page-item" [class.disabled]="isFirstPage">
+      <a class="page-link" (click)="previous()">
+        Previous
+      </a>
+    </li>
+
+    <li class="page-item"><a class="page-link">{{ previousPage }} </a></li>
+    <li class="page-item active"><a class="page-link"> {{ currentPage }} </a></li>
+    <li class="page-item"><a class="page-link">{{ nextPage }} </a></li>
+
+    <li class="page-item" [class.disabled]="isLastPage">
+      <a class="page-link" (click)="next()">
+        Next
+      </a>
+    </li>
+
+  </ul>
+</nav>

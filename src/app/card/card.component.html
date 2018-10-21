@@ -1,0 +1,32 @@
+<div class="card">
+
+    <div [ngClass] = "{
+      'book-card': (item.url).includes('books'),
+      'house-card': (item.url).includes('houses'),
+      'character-card': (item.url).includes('characters')
+    }" [ngStyle] = "{ 'height': '2px' }">
+    </div>
+
+    <div class="card-body">
+      
+      <h5 class="card-title" *ngIf = (item.name) >{{ item.name }}</h5>
+      <h5 class="card-title" *ngIf = (!(item.name)) >Not Specified</h5>
+      <div class="card-banner">
+          <i *ngIf = " (item.url).includes('books') " class="fas fa-journal-whills icon"></i>
+          <i *ngIf = " (item.url).includes('houses') "  class="fab fa-fort-awesome icon"></i>
+          <i *ngIf = " (item.url).includes('characters') "  class="fas fa-crown icon"></i>
+      </div>
+      <p class="card-text"> {{ item.url }} </p>
+
+      
+      <!-- <a [routerLink] = "['detail']" class="btn btn-primary">Details</a> -->
+    </div>
+    <div  class = "card-footer" [ngClass] = "{
+      'book-card': (item.url).includes('books'),
+      'house-card': (item.url).includes('houses'),
+      'character-card': (item.url).includes('characters')
+    }"
+    (click) = "goToDetails(item)" >
+        <div>View Details</div>
+    </div>
+  </div>
